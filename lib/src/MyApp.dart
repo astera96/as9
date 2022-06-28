@@ -23,7 +23,7 @@ class _MyApp extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Baby's album"),
+          title: const Text("Baby's album"),
           centerTitle: true,
           backgroundColor: Colors.pink,
         ),
@@ -31,20 +31,20 @@ class _MyApp extends State<MyApp> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 220,
               width: 220,
               child: Image.network(image1),
             ),
-            Divider(
+            const Divider(
               height: 30,
               color: Colors.pink,
-              thickness: 0,
+              thickness: 1,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
+                SizedBox(
                   height: 150,
                   width: 150,
                   child: InkWell(
@@ -54,7 +54,7 @@ class _MyApp extends State<MyApp> {
                     child: Image.network(imag2),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 150,
                   width: 150,
                   child: InkWell(
@@ -64,7 +64,7 @@ class _MyApp extends State<MyApp> {
                     child: Image.network(image3),
                   ),
                 ),
-                Container(
+                SizedBox(
                   height: 150,
                   width: 150,
                   child: InkWell(
@@ -76,18 +76,17 @@ class _MyApp extends State<MyApp> {
                 ),
               ],
             ),
-            Container(
-                child: ElevatedButton(
-                    onPressed: (() => setState(() {
-                          if (image1 !=
-                              "https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") {
-                            image1 =
-                                "https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
-                          } else {
-                            print("Its all ready show main Image");
-                          }
-                        })),
-                    child: Text("Reset Image")))
+            ElevatedButton(
+                onPressed: (() => setState(() {
+                      if (image1 !=
+                          "https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") {
+                        image1 =
+                            "https://images.pexels.com/photos/1462636/pexels-photo-1462636.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+                      } else {
+                        print("Its all ready show main Image");
+                      }
+                    })),
+                child: const Text("Reset Image"))
           ],
         ),
       ),
